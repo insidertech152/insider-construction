@@ -1,0 +1,6 @@
+{
+  "name": "[اسم النظام] | [System name]",
+  "description": "Design system and UI foundation for Arabic-first (RTL) ERP web application.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

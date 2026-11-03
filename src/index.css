@@ -1,0 +1,416 @@
+@import "tailwindcss";
+
+:root {
+  /* Fonts */
+  --font-sans: 'Almarai', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-arabic: 'Almarai', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-latin: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-ar: 'Almarai', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-en: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-ibm: 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-readex: 'Readex Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-tajawal: 'Tajawal', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-noto: 'Noto Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Font Weight Tokens */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Primary (#4680FF) Scale */
+  --color-primary-50: #eef4ff;
+  --color-primary-100: #dbe7fe;
+  --color-primary-200: #bfd6fe;
+  --color-primary-300: #93bcfd;
+  --color-primary-400: #6099fa;
+  --color-primary-500: #4680ff;
+  --color-primary-600: #2662f5;
+  --color-primary-700: #1d4ee2;
+  --color-primary-800: #1d40b7;
+  --color-primary-900: #1d3a90;
+  --color-primary-soft: #eef4ff;
+  --color-primary-soft-text: #1d4ee2;
+  /* Action shades (WCAG AA > 4.5:1 with white text for buttons, badges, toasts) */
+  --color-primary-action: #3469e6;
+  --color-success-action: #1b7f5c;
+  --color-info-action: #0b7bb5;
+
+  /* Secondary (#5B6B79) Scale */
+  --color-secondary-50: #f8fafc;
+  --color-secondary-100: #f1f5f9;
+  --color-secondary-200: #e2e8f0;
+  --color-secondary-300: #cbd5e1;
+  --color-secondary-400: #94a3b8;
+  --color-secondary-500: #5b6b79;
+  --color-secondary-600: #475569;
+  --color-secondary-700: #334155;
+  --color-secondary-800: #1e293b;
+  --color-secondary-900: #0f172a;
+  --color-secondary-soft: #f1f5f9;
+  --color-secondary-soft-text: #475569;
+
+  /* Success (#2CA87F) Scale */
+  --color-success-50: #edfbf6;
+  --color-success-100: #d4f6e8;
+  --color-success-200: #aceed3;
+  --color-success-300: #72deb5;
+  --color-success-400: #37c693;
+  --color-success-500: #2ca87f;
+  --color-success-600: #1b8865;
+  --color-success-700: #176c52;
+  --color-success-800: #165643;
+  --color-success-900: #144738;
+  --color-success-soft: #edfbf6;
+  --color-success-soft-text: #176c52;
+
+  /* Danger (#DC2626) Scale */
+  --color-danger-50: #fef2f2;
+  --color-danger-100: #fee2e2;
+  --color-danger-200: #fecaca;
+  --color-danger-300: #fca5a5;
+  --color-danger-400: #f87171;
+  --color-danger-500: #dc2626;
+  --color-danger-600: #b91c1c;
+  --color-danger-700: #991b1b;
+  --color-danger-800: #7f1d1d;
+  --color-danger-900: #450a0a;
+  --color-danger-soft: #fef2f2;
+  --color-danger-soft-text: #b91c1c;
+
+  /* Warning (#E58A00) Scale */
+  --color-warning-50: #fffbeb;
+  --color-warning-100: #fef3c7;
+  --color-warning-200: #fde68a;
+  --color-warning-300: #fcd34d;
+  --color-warning-400: #fbbf24;
+  --color-warning-500: #e58a00;
+  --color-warning-600: #b86800;
+  --color-warning-700: #924e03;
+  --color-warning-800: #783d07;
+  --color-warning-900: #452003;
+  --color-warning-soft: #fffbeb;
+  --color-warning-soft-text: #924e03;
+
+  /* Info (#00BCD4) Scale */
+  --color-info-50: #f0f9ff;
+  --color-info-100: #e0f2fe;
+  --color-info-200: #bae6fd;
+  --color-info-300: #7dd3fc;
+  --color-info-400: #38bdf8;
+  --color-info-500: #00bcd4;
+  --color-info-600: #0284c7;
+  --color-info-700: #0369a1;
+  --color-info-800: #075985;
+  --color-info-900: #0c4a6e;
+  --color-info-soft: #f0f9ff;
+  --color-info-soft-text: #0369a1;
+
+  /* Dark palette for sidebar & headers */
+  --color-dark-50: #e9ecef;
+  --color-dark-100: #ced4da;
+  --color-dark-200: #adb5bd;
+  --color-dark-500: #343a40;
+  --color-dark-700: #222e3c;
+  --color-dark-800: #1a222c;
+  --color-dark-900: #11171d;
+
+  /* Sidebar Tokens (ruler: reference sidebar = 264 CSS px) */
+  --sidebar-width: 264px;
+  --sidebar-collapsed-width: 72px;
+  --topbar-height: 74px;
+  --color-sidebar-bg: #222e3c;
+  --color-sidebar-hover: rgba(255, 255, 255, 0.05);
+  --color-sidebar-active-bar: #3469e6;
+  --color-sidebar-text: #a9b7c6;
+  --color-sidebar-text-active: #ffffff;
+  --color-sidebar-label: #f8fafc;
+  --color-sidebar-muted: #93a1b1;
+  --color-sidebar-border: #2a3746;
+  --color-sidebar-group-open: rgba(0, 0, 0, 0.18);
+  --color-sidebar-leaf-active-text: #6ba7d6;
+
+  /* Surface & Layout Tokens */
+  --color-page-bg: #f4f6f8;
+  --color-card-bg: #ffffff;
+  --color-surface-soft: #f7f8fa;
+  --color-border: #e2e8f0;
+  --color-border-subtle: #f1f5f9;
+  --color-border-focus: #4680ff;
+
+  /* Text Tokens with guaranteed 4.5:1+ contrast */
+  --color-text-primary: #1e293b;
+  --color-text-secondary: #4b5563;
+  --color-text-muted: #64748b;
+  --color-text-placeholder: #94a3b8;
+  --color-text-inverse: #ffffff;
+
+  /* Typography Scale Tokens (Almarai 400 body, 700 headings/headers; Inter 400/500/600) */
+  --font-size-2xs: 10px;
+  --font-size-xs-alt: 11px;
+  --font-size-xs: 12px;
+  --font-size-sm-alt: 13px;
+  --font-size-sm: 14px;
+  --font-size-base: 15px;
+  --font-size-md: 16px;
+  --font-size-title: 20px;
+  --font-size-xl: 24px;
+  --font-size-2xl: 30px;
+
+  /* Radii - Reference uses 4px strictly for cards, buttons, badges, inputs */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-card: 4px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 8px;
+  --radius-pill: 9999px;
+
+  /* Elevation Shadows - Reference card shadow 0 1px 2px rgba(15,23,42,0.04) and sidebar shadow */
+  --shadow-card: 0 1px 2px 0 rgba(15, 23, 42, 0.04);
+  --shadow-xs: 0 1px 2px 0 rgba(15, 23, 42, 0.03);
+  --shadow-sidebar: 0 0 24px 0 rgba(15, 23, 42, 0.18);
+  --shadow-dropdown: 0 4px 12px 0 rgba(15, 23, 42, 0.08), 0 1px 3px 0 rgba(15, 23, 42, 0.04);
+  --shadow-dropdown-soft: 0 10px 40px 0 rgba(15, 23, 42, 0.12);
+  --shadow-toast: 0 8px 20px -3px rgba(15, 23, 42, 0.08), 0 3px 6px -2px rgba(15, 23, 42, 0.04);
+
+  /* Table Dimensions & Column Min-Width Tokens */
+  --table-header-height: 44px;
+  --table-row-height: 56px;
+  --col-min-code: 130px;
+  --col-min-project: 260px;
+  --col-min-client: 180px;
+  --col-min-money: 150px;
+  --col-min-progress: 160px;
+  --col-min-status: 140px;
+  --col-min-actions: 120px;
+
+  /* Transitions */
+  --ease-default: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-default: 200ms;
+}
+
+@theme {
+  --font-sans: var(--font-sans);
+  --font-arabic: var(--font-arabic);
+  --font-latin: var(--font-latin);
+  --font-ar: var(--font-ar);
+  --font-en: var(--font-en);
+  --font-ibm: var(--font-ibm);
+  --font-readex: var(--font-readex);
+  --font-tajawal: var(--font-tajawal);
+  --font-noto: var(--font-noto);
+
+  --color-primary-50: var(--color-primary-50);
+  --color-primary-100: var(--color-primary-100);
+  --color-primary-200: var(--color-primary-200);
+  --color-primary-300: var(--color-primary-300);
+  --color-primary-400: var(--color-primary-400);
+  --color-primary-500: var(--color-primary-500);
+  --color-primary-600: var(--color-primary-600);
+  --color-primary-700: var(--color-primary-700);
+  --color-primary-800: var(--color-primary-800);
+  --color-primary-900: var(--color-primary-900);
+  --color-primary-soft: var(--color-primary-soft);
+  --color-primary-soft-text: var(--color-primary-soft-text);
+  --color-primary-action: var(--color-primary-action);
+  --color-success-action: var(--color-success-action);
+  --color-info-action: var(--color-info-action);
+  --color-primary: var(--color-primary-500);
+
+  --color-secondary-50: var(--color-secondary-50);
+  --color-secondary-100: var(--color-secondary-100);
+  --color-secondary-200: var(--color-secondary-200);
+  --color-secondary-300: var(--color-secondary-300);
+  --color-secondary-400: var(--color-secondary-400);
+  --color-secondary-500: var(--color-secondary-500);
+  --color-secondary-600: var(--color-secondary-600);
+  --color-secondary-700: var(--color-secondary-700);
+  --color-secondary-800: var(--color-secondary-800);
+  --color-secondary-900: var(--color-secondary-900);
+  --color-secondary-soft: var(--color-secondary-soft);
+  --color-secondary-soft-text: var(--color-secondary-soft-text);
+  --color-secondary: var(--color-secondary-500);
+
+  --color-success-50: var(--color-success-50);
+  --color-success-100: var(--color-success-100);
+  --color-success-200: var(--color-success-200);
+  --color-success-300: var(--color-success-300);
+  --color-success-400: var(--color-success-400);
+  --color-success-500: var(--color-success-500);
+  --color-success-600: var(--color-success-600);
+  --color-success-700: var(--color-success-700);
+  --color-success-800: var(--color-success-800);
+  --color-success-900: var(--color-success-900);
+  --color-success-soft: var(--color-success-soft);
+  --color-success-soft-text: var(--color-success-soft-text);
+  --color-success: var(--color-success-500);
+
+  --color-danger-50: var(--color-danger-50);
+  --color-danger-100: var(--color-danger-100);
+  --color-danger-200: var(--color-danger-200);
+  --color-danger-300: var(--color-danger-300);
+  --color-danger-400: var(--color-danger-400);
+  --color-danger-500: var(--color-danger-500);
+  --color-danger-600: var(--color-danger-600);
+  --color-danger-700: var(--color-danger-700);
+  --color-danger-800: var(--color-danger-800);
+  --color-danger-900: var(--color-danger-900);
+  --color-danger-soft: var(--color-danger-soft);
+  --color-danger-soft-text: var(--color-danger-soft-text);
+  --color-danger: var(--color-danger-500);
+
+  --color-warning-50: var(--color-warning-50);
+  --color-warning-100: var(--color-warning-100);
+  --color-warning-200: var(--color-warning-200);
+  --color-warning-300: var(--color-warning-300);
+  --color-warning-400: var(--color-warning-400);
+  --color-warning-500: var(--color-warning-500);
+  --color-warning-600: var(--color-warning-600);
+  --color-warning-700: var(--color-warning-700);
+  --color-warning-800: var(--color-warning-800);
+  --color-warning-900: var(--color-warning-900);
+  --color-warning-soft: var(--color-warning-soft);
+  --color-warning-soft-text: var(--color-warning-soft-text);
+  --color-warning: var(--color-warning-500);
+
+  --color-info-50: var(--color-info-50);
+  --color-info-100: var(--color-info-100);
+  --color-info-200: var(--color-info-200);
+  --color-info-300: var(--color-info-300);
+  --color-info-400: var(--color-info-400);
+  --color-info-500: var(--color-info-500);
+  --color-info-600: var(--color-info-600);
+  --color-info-700: var(--color-info-700);
+  --color-info-800: var(--color-info-800);
+  --color-info-900: var(--color-info-900);
+  --color-info-soft: var(--color-info-soft);
+  --color-info-soft-text: var(--color-info-soft-text);
+  --color-info: var(--color-info-500);
+
+  --color-sidebar-bg: var(--color-sidebar-bg);
+  --color-sidebar-hover: var(--color-sidebar-hover);
+  --color-sidebar-text: var(--color-sidebar-text);
+  --color-sidebar-text-active: var(--color-sidebar-text-active);
+  --color-sidebar-label: var(--color-sidebar-label);
+  --color-sidebar-muted: var(--color-sidebar-muted);
+  --color-sidebar-border: var(--color-sidebar-border);
+  --color-sidebar-group-open: var(--color-sidebar-group-open);
+  --color-sidebar-leaf-active: var(--color-sidebar-leaf-active-text);
+
+  --color-page-bg: var(--color-page-bg);
+  --color-card-bg: var(--color-card-bg);
+  --color-surface-soft: var(--color-surface-soft);
+  --color-border: var(--color-border);
+  --color-border-subtle: var(--color-border-subtle);
+  --color-border-focus: var(--color-border-focus);
+
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-muted: var(--color-text-muted);
+  --color-text-placeholder: var(--color-text-placeholder);
+  --color-text-inverse: var(--color-text-inverse);
+
+  --radius-xs: var(--radius-xs);
+  --radius-sm: var(--radius-sm);
+  --radius-card: var(--radius-card);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-pill: var(--radius-pill);
+
+  --shadow-card: var(--shadow-card);
+  --shadow-sidebar: var(--shadow-sidebar);
+  --shadow-dropdown: var(--shadow-dropdown);
+  --shadow-dropdown-soft: var(--shadow-dropdown-soft);
+  --shadow-toast: var(--shadow-toast);
+
+  --spacing-sidebar: var(--sidebar-width);
+  --spacing-sidebar-collapsed: var(--sidebar-collapsed-width);
+  --spacing-topbar: var(--topbar-height);
+}
+
+/* Scrollbar Utility: Hidden default scrollbar while maintaining keyboard and touch scroll */
+.scrollbar-hidden {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+/* Table Column Width Tokens (Strictly enforce minimum column widths to prevent squeezed columns) */
+.col-code { min-width: var(--col-min-code); }
+.col-project { min-width: var(--col-min-project); }
+.col-client { min-width: var(--col-min-client); }
+.col-money { min-width: var(--col-min-money); }
+.col-progress { min-width: var(--col-min-progress); }
+.col-status { min-width: var(--col-min-status); }
+.col-actions { min-width: var(--col-min-actions); width: var(--col-min-actions); }
+
+/* Base Body Styles */
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-page-bg);
+  color: var(--color-text-primary);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* Ensure numerals remain readable Western digits 0-9 as required */
+.font-numeric, [dir="rtl"] .font-numeric {
+  font-family: var(--font-latin), var(--font-sans);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Accessibility: Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Print Stylesheet for Document View (A4 Portrait, clean RTL, hide UI shell) */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 12mm 15mm;
+  }
+  
+  body {
+    background-color: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 10pt !important;
+  }
+
+  /* Hide app shell elements, floating switcher, and non-printable elements */
+  .no-print,
+  header,
+  aside,
+  nav,
+  .fixed,
+  button:not(.print-include) {
+    display: none !important;
+  }
+
+  main {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+  }
+
+  .print-card {
+    box-shadow: none !important;
+    border: 1px solid #cbd5e1 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    break-inside: avoid;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+}
